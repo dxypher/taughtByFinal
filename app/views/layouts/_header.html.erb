@@ -1,0 +1,32 @@
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <%= link_to "TaughtBy", root_url, :class => "brand" %>
+        <ul class="nav">
+	
+				<% if session[:uid].present? %>
+					<li><%= link_to "View My Profile", student_url(current_user) %></li>
+					<li><%= link_to "Sign Out", sign_out_url %></li>
+				<% else %>
+					<li class="divider-vertical"></li>
+					<!-- the marketing bit get rid if no time -->
+					<li><%= link_to "How It Works", "#" %></li>
+					
+					<li class="divider-vertical"></li>
+					<li><%= link_to "Sign Up", new_user_url %></li>
+					<li class="divider-vertical"></li>
+					<li><%= link_to "Login", sign_in_url %></li>
+					<li class="divider-vertical"></li>
+					
+					<!-- need to add some kind of search for site
+					<ul class="nav pull-right">
+						<form class="navbar-search">
+						  <input type="text" class="search-query" placeholder="Search">
+						</form>
+					</ul> -->
+					
+				<% end %>
+        </ul>
+      </div>
+    </div>
+  </div>

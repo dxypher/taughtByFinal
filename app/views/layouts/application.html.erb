@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Caddev</title>
+  
+  <script type="text/javascript"
+    src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCwkz6dUGGl47j3qhO4VcxAcFYEj0A9lKg&sensor=false">
+  </script>
+	
+
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  
+</head> 
+<!-- gets rid of the nav bar on tutor_show -->
+<%= render 'layouts/header' unless (controller.controller_name == "tutors") && (controller.action_name == "show") %>
+
+<!-- trying to set different background images for home page and tutor_show -->
+<body class="<%= params[:controller] %>">
+	<div class="container">
+    <%= yield %>
+	</div>
+</body>
+</html>
+

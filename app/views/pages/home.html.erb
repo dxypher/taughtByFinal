@@ -1,0 +1,61 @@
+<div class="container home_page">
+	
+	<% if flash[:notice] %>
+		<h3 class="prepend-1"><%= flash[:notice] %></h1>
+	<% end %>
+	
+	<div class="row">
+		
+		<div class="span8 offset2">
+			<div class="center">
+			<br></br><!-- get rid of this after styling -->
+			<br></br>
+			<br></br><!-- get rid of this after styling -->
+				<h1>Learn Something New!</h1>
+			  <h2>Find the best tutors and classes in your city</h2>
+			<br></br><!-- get rid of this after styling -->
+			
+		    <div class="hero-unit">
+
+	
+			  
+		        <% complete_list = ["guitar", "piano"] %>
+						<%= form_tag study_groups_url, :method => 'get', :class => "prepend-3" do %>
+								<label>I want to learn...</label>
+								<%= text_field_tag 'subject', nil, :id => "search-subject", :class => "span6 search-query",
+								 :autocomplete => "off", :placeholder=>"a subject...", :data => {:provide => "typeahead", :items=>"4", 
+								   :source => @subjects }%>
+							
+						    <label>near...</label>
+						    
+						    <input id='search-location' type="text" class="span6 search-query" name='location' value='' autocomplete='off' placeholder="your zipcode">
+						    <br/><br/>
+								<button type="submit" class="btn btn-success btn-large">Search for your tutor</button>
+						<% end %>
+		
+		
+			  </div>
+			
+			
+	    </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
